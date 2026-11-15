@@ -301,6 +301,243 @@ header.sticky-top {
 .experience-section {
   background: linear-gradient(125deg, #938b80 0%, #a69b8e 50%, #938b80 100%);
 }
+
+.timeline-col {
+  padding: 3rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+}
+.timeline-row {
+  display: grid;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 3rem;
+  border-top: 10px solid rgba(252, 46, 0, 0.2);
+}
+
+.content-box {
+  display: grid;
+  min-width: 0;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  border: 3px solid rgba(249, 8, 8, 0.2);
+  border-top: 25px solid rgba(223, 14, 14, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.education-logo {
+  display: flex;
+  max-width: 300px;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+}
+.education-logo img {
+  padding: 0.5rem;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+}
+.content-box {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  gap: 0.75rem;
+  padding: 1.75rem 1.25rem 1.5rem;
+  border-radius: 16px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 5px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.content-box:hover {
+  transform: translateY(-6px);
+  border-color: #a27035;
+  box-shadow:
+    5px 14px 36px rgba(0, 0, 0, 0.35),
+    5px 20px rgba(112, 16, 7, 0.12);
+}
+.content-box::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #a26f35;
+  border: 2px solid #0c0a3e;
+  top: -55px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px #a27035;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.content-box::after {
+  content: attr(data-date);
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background: #0b0a3a;
+  border: 2px solid #0b0a3a;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+}
+
+.content-box:hover::before {
+  transform: translateX(-50%) scale(1.25);
+  box-shadow: 0 0 18px rgb(255, 0, 0);
+}
+
+.content-box > p {
+  font-family: "Blogger", sans-serif;
+  opacity: 0.5;
+  color: #ffffff;
+}
+.content-box > h4 {
+  font-family: Alfphabet, sans-serif;
+  color: #0c0a3e;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  background: rgba(81, 139, 133, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.glass-header-box {
+  display: inline-block;
+  padding: 16px 28px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-left: 8px solid red;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 576px) {
+  .timeline-col {
+    display: block;
+    width: 100%;
+    padding: 2rem 0.75rem;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .timeline-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    gap: 2rem;
+    padding: 0 4.5rem 0 0;
+    border-top: none;
+    border-right: 3px solid rgba(209, 54, 19, 0.2);
+    box-sizing: border-box;
+  }
+
+  .content-box {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 0.75rem;
+    position: relative;
+  }
+
+  .education-logo {
+    width: 100%;
+    max-width: 100%;
+    height: 120px;
+  }
+
+  .education-logo img {
+    max-width: 100%;
+    max-height: 110px;
+    object-fit: contain;
+  }
+
+  .content-box h4 {
+    font-size: 1rem;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .content-box p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .content-box::before {
+    width: 20px;
+    height: 10px;
+    top: 50%;
+    left: auto;
+    right: -6rem;
+    transform: translateY(-50%);
+  }
+
+  .content-box::after {
+    content: attr(data-date);
+    width: 3.5rem;
+    height: auto;
+    top: 51%;
+    left: auto;
+    right: -4.25rem;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .content-box:hover::after {
+    opacity: 1;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+}
+
 @media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: 1fr;
