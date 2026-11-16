@@ -1,11 +1,9 @@
-/* Background animation container */
 .animated-container {
   position: relative;
   overflow: hidden;
   isolation: isolate;
 }
 
-/* Animated background waves */
 .animated-container .bg {
   animation: slide 3s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, #6f1d1b 50%, #111d4a 50%);
@@ -28,7 +26,6 @@
   animation-duration: 5s;
 }
 
-/* Wave movement */
 @keyframes slide {
   0% {
     transform: translateX(-25%);
@@ -38,7 +35,6 @@
   }
 }
 
-/* Keep header content above background */
 header.sticky-top {
   position: sticky;
   top: 0;
@@ -59,7 +55,7 @@ header.sticky-top {
   position: relative;
   z-index: 1;
 }
-/* Custom font */
+
 @font-face {
   font-family: "Alfphabet";
   src: url("../fonts/alfphabet/osp.foundry.alfphabet-master/Alfphabet-IV.ttf")
@@ -85,7 +81,6 @@ header.sticky-top {
   letter-spacing: 1px;
 }
 
-/* Smooth Animated Underline on Nav Links */
 .navbar .nav-link:not(.resume-btn) {
   position: relative;
   transition: color 0.3s ease;
@@ -98,13 +93,12 @@ header.sticky-top {
   left: 50%;
   width: 0;
   height: 5px;
-  background-color: #dc3545; /* Bootstrap danger red */
+  background-color: #dc3545;
   transition:
     width 0.3s ease,
     left 0.3s ease;
 }
 
-/* Expand underline from center on hover (except active pill) */
 .navbar .nav-link:not(.active):not(.resume-btn):not(.get-btn):hover::after {
   width: 80%;
   left: 10%;
@@ -116,7 +110,6 @@ header.sticky-top {
   }
 }
 
-/* Resume Button Glow & Lift */
 .btn {
   transition:
     transform 0.25s ease,
@@ -135,6 +128,44 @@ header.sticky-top {
 .navbar-toggler:focus,
 .navbar-toggler:active {
   box-shadow: 0 0 15px red;
+}
+
+.social-sidebar {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.social-sidebar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  transition:
+    width 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.social-sidebar a:hover {
+  width: 60px;
+}
+
+.email {
+  background-color: #e4405f;
+}
+.linkedin {
+  background-color: #0a66c2;
+}
+.github {
+  background-color: #24292e;
 }
 
 .skills-grid {
@@ -522,6 +553,176 @@ header.sticky-top {
   opacity: 0.9;
 }
 
+.milestone-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 1.75rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 10px 30px rgba(12, 10, 62, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.milestone-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(216, 130, 44, 0.65);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  box-shadow:
+    0 16px 36px rgba(12, 10, 62, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.milestone-icon {
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(12, 10, 62, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.milestone-card:hover .milestone-icon {
+  transform: scale(1.04);
+}
+
+.milestone-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 100%;
+  min-width: 0;
+  font-family: "Blogger", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.milestone-card > .milestone-item:last-child {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.milestone-heading,
+.milestone-text {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.milestone-heading {
+  font-family: "Alfphabet", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  padding: 0;
+}
+
+.milestone-text {
+  font-family: "Blogger", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: #f3b574;
+}
+.footer-elegant {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  padding: 0.25rem 1.75rem;
+  background: #faf9f6;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.footer-elegant .bg {
+  animation: elegantDrift 14s ease-in-out infinite alternate;
+  background-image: linear-gradient(
+    120deg,
+    rgba(235, 232, 224, 0.55) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(226, 222, 213, 0.55) 100%
+  );
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -50%;
+  right: -50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.footer-elegant .bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 18s;
+  opacity: 0.7;
+}
+
+.footer-elegant .bg3 {
+  animation-duration: 22s;
+  opacity: 0.5;
+}
+
+.footer-elegant footer {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-elegant .Blogger-font {
+  font-size: 0.92rem;
+  font-style: italic;
+  color: #5c5a55 !important;
+  letter-spacing: 0.3px;
+}
+
+.footer-elegant .Alfphabet-font {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2c2b29 !important;
+  letter-spacing: 2px;
+}
+
+.elegant-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(92, 90, 85, 0.3) 20%,
+    rgba(92, 90, 85, 0.3) 80%,
+    transparent 100%
+  );
+}
+
+@keyframes elegantDrift {
+  0% {
+    transform: translateX(-12%);
+  }
+  100% {
+    transform: translateX(12%);
+  }
+}
 @media (max-width: 576px) {
   .timeline-col {
     display: block;
